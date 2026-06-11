@@ -1,0 +1,231 @@
+segment_id,source_kind,row_index,row_label,source_path,color,thickness,code,year_start_est,year_end_est,marker_center_year_est,start_abs_day,end_abs_day,duration_days,start_year,start_day_of_year,start_day_label,end_year,end_day_of_year,end_day_label,x_start_px,x_end_px,source_note
+1,horizontal,1,airs AQUA,/airs/airsev,blue,thin,blue_thin,2002.6774,2007.019,,10103,11687,1585,2002,248,2002-D248,2007,7,2007-D007,448,491,horizontal_visible_segment
+2,horizontal,1,airs AQUA,/airs/airsev,blue,thick,blue_thick,2007.019,2021.0304,,11687,16802,5116,2007,7,2007-D007,2021,12,2021-D012,492,633,horizontal_visible_segment
+3,horizontal,1,airs AQUA,/airs/airsev,blue,thin,blue_thin,2021.0304,2026.9507,,16802,18963,2162,2021,12,2021-D012,2026,348,2026-D348,634,693,horizontal_visible_segment
+4,horizontal,2,airs AQUA,/airs/nasa/aqua,blue,thick,blue_thick,2002.6774,2023.2011,,10103,17594,7492,2002,248,2002-D248,2023,74,2023-D074,448,655,horizontal_visible_segment
+5,horizontal,2,airs AQUA,/airs/nasa/aqua,blue,thin,blue_thin,2023.2011,2026.9507,,17594,18963,1370,2023,74,2023-D074,2026,348,2026-D348,656,693,horizontal_visible_segment
+6,horizontal,3,amsr2 GCOM-W1,/amsr2/nasa,black,thick,black_thick,2012.5446,2020.537,,13704,16622,2919,2012,199,2012-D199,2020,197,2020-D197,548,628,horizontal_visible_segment
+7,horizontal,4,amsre AQUA,/amsre/nasa,black,thick,black_thick,2002.5787,2011.7552,,10067,13416,3350,2002,212,2002-D212,2011,276,2011-D276,447,539,horizontal_visible_segment
+8,horizontal,5,amsua NOAA 15,/amsua/1bamua,blue,thick,blue_thick,1998.7306,2025.5693,,8662,18458,9797,1998,267,1998-D267,2025,208,2025-D208,408,679,horizontal_visible_segment
+9,horizontal,5,amsua NOAA 15,/amsua/1bamua,blue,thin,blue_thin,2025.5693,2026.9507,,18458,18963,506,2025,208,2025-D208,2026,348,2026-D348,680,693,horizontal_visible_segment
+10,horizontal,6,amsua NOAA 16,/amsua/1bamua,blue,thin,blue_thin,2000.704,2001.0,,9382,9490,109,2000,257,2000-D257,2000,365,2000-D365,428,430,horizontal_visible_segment
+11,horizontal,6,amsua NOAA 16,/amsua/1bamua,blue,thick,blue_thick,2001.0,2007.1176,,9491,11723,2233,2001,1,2001-D001,2007,43,2007-D043,431,492,horizontal_visible_segment
+12,horizontal,6,amsua NOAA 16,/amsua/1bamua,black,thick,black_thick,2007.1176,2014.518,,11723,14425,2703,2007,43,2007-D043,2014,190,2014-D190,493,567,horizontal_visible_segment
+13,horizontal,7,amsua NOAA 17,/amsua/1bamua,blue,thick,blue_thick,2002.5787,2003.8615,,10067,10535,469,2002,212,2002-D212,2003,315,2003-D315,447,459,horizontal_visible_segment
+14,horizontal,8,amsua NOAA 18,/amsua/1bamua,blue,thick,blue_thick,2005.6376,2025.5693,,11183,18458,7276,2005,233,2005-D233,2025,208,2025-D208,478,679,horizontal_visible_segment
+15,horizontal,8,amsua NOAA 18,/amsua/1bamua,blue,thin,blue_thin,2025.5693,2026.9507,,18458,18963,506,2025,208,2025-D208,2026,348,2026-D348,680,693,horizontal_visible_segment
+16,horizontal,9,amsua METOP-A,/amsua/1bamua,blue,thick,blue_thick,2007.315,2021.8197,,11795,17090,5296,2007,115,2007-D115,2021,300,2021-D300,495,641,horizontal_visible_segment
+17,horizontal,10,amsua NOAA 19,/amsua/1bamua,blue,thin,blue_thin,2009.1898,2009.5844,,12480,12624,145,2009,70,2009-D070,2009,214,2009-D214,514,517,horizontal_visible_segment
+18,horizontal,10,amsua NOAA 19,/amsua/1bamua,blue,thick,blue_thick,2009.5844,2025.5693,,12624,18458,5835,2009,214,2009-D214,2025,208,2025-D208,518,679,horizontal_visible_segment
+19,horizontal,10,amsua NOAA 19,/amsua/1bamua,blue,thin,blue_thin,2025.5693,2026.9507,,18458,18963,506,2025,208,2025-D208,2026,348,2026-D348,680,693,horizontal_visible_segment
+20,vertical_marker,11,amsua METOP-B,/amsua/1bamua,black,marker,black_marker,2010.3245,2010.3245,2010.3245,12894,12894,1,2010,119,2010-D119,2010,119,2010-D119,525,525,vertical_marker_as_one_day_segment
+21,vertical_marker,11,amsua METOP-B,/amsua/1bamua,black,marker,black_marker,2010.9165,2010.9165,2010.9165,13110,13110,1,2010,335,2010-D335,2010,335,2010-D335,531,531,vertical_marker_as_one_day_segment
+22,vertical_marker,11,amsua METOP-B,/amsua/1bamua,black,marker,black_marker,2011.5085,2011.5085,2011.5085,13326,13326,1,2011,186,2011-D186,2011,186,2011-D186,537,537,vertical_marker_as_one_day_segment
+23,vertical_marker,11,amsua METOP-B,/amsua/1bamua,black,marker,black_marker,2012.1992,2012.1992,2012.1992,13578,13578,1,2012,73,2012-D073,2012,73,2012-D073,544,544,vertical_marker_as_one_day_segment
+24,horizontal,11,amsua METOP-B,/amsua/1bamua,blue,thick,blue_thick,2013.038,2026.556,,13884,18818,4935,2013,14,2013-D014,2026,203,2026-D203,553,689,horizontal_visible_segment
+25,horizontal,11,amsua METOP-B,/amsua/1bamua,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+26,horizontal,12,amsua METOP-C,/amsua/1bamua,blue,thick,blue_thick,2019.649,2026.556,,16297,18818,2522,2019,237,2019-D237,2026,203,2026-D203,620,689,horizontal_visible_segment
+27,horizontal,12,amsua METOP-C,/amsua/1bamua,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+28,horizontal,13,amsua AQUA,/amsua/nasa/aqua,blue,thick,blue_thick,2002.6774,2023.2011,,10103,17594,7492,2002,248,2002-D248,2023,74,2023-D074,448,655,horizontal_visible_segment
+29,horizontal,14,amsub NOAA 15,/amsub/1bamub,blue,thick,blue_thick,1998.7306,2006.1309,,8662,11363,2702,1998,267,1998-D267,2006,48,2006-D048,408,482,horizontal_visible_segment
+30,horizontal,14,amsub NOAA 15,/amsub/1bamub,black,thick,black_thick,2006.2296,2011.2619,,11399,13236,1838,2006,84,2006-D084,2011,96,2011-D096,484,534,horizontal_visible_segment
+31,horizontal,15,amsub NOAA 16,/amsub/1bamub,blue,thin,blue_thin,2000.704,2001.0,,9382,9490,109,2000,257,2000-D257,2000,365,2000-D365,428,430,horizontal_visible_segment
+32,horizontal,15,amsub NOAA 16,/amsub/1bamub,blue,thick,blue_thick,2001.0,2009.3871,,9491,12552,3062,2001,1,2001-D001,2009,142,2009-D142,431,515,horizontal_visible_segment
+33,horizontal,15,amsub NOAA 16,/amsub/1bamub,black,thick,black_thick,2009.3871,2014.518,,12552,14425,1874,2009,142,2009-D142,2014,190,2014-D190,516,567,horizontal_visible_segment
+34,horizontal,16,amsub NOAA 17,/amsub/1bamub,blue,thick,blue_thick,2002.5787,2010.0778,,10067,12804,2738,2002,212,2002-D212,2010,29,2010-D029,447,522,horizontal_visible_segment
+35,horizontal,16,amsub NOAA 17,/amsub/1bamub,black,thick,black_thick,2010.0778,2013.334,,12804,13992,1189,2010,29,2010-D029,2013,122,2013-D122,523,555,horizontal_visible_segment
+36,horizontal,17,atms NPP,/atms/atms,blue,thin,blue_thin,2011.7552,2012.0512,,13416,13524,109,2011,276,2011-D276,2012,19,2012-D019,540,542,horizontal_visible_segment
+37,horizontal,17,atms NPP,/atms/atms,blue,thick,blue_thick,2012.0512,2026.556,,13524,18818,5295,2012,19,2012-D019,2026,203,2026-D203,543,689,horizontal_visible_segment
+38,horizontal,17,atms NPP,/atms/atms,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+39,horizontal,18,atms NOAA 20,/atms/atms,blue,thin,blue_thin,2018.2676,2020.7343,,15793,16694,902,2018,98,2018-D098,2020,269,2020-D269,606,630,horizontal_visible_segment
+40,horizontal,18,atms NOAA 20,/atms/atms,blue,thick,blue_thick,2020.7343,2026.556,,16694,18818,2125,2020,269,2020-D269,2026,203,2026-D203,631,689,horizontal_visible_segment
+41,horizontal,18,atms NOAA 20,/atms/atms,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+42,horizontal,19,atms NOAA 21,/atms/atms,blue,thick,blue_thick,2023.5958,2026.556,,17738,18818,1081,2023,218,2023-D218,2026,203,2026-D203,660,689,horizontal_visible_segment
+43,horizontal,19,atms NOAA 21,/atms/atms,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+44,horizontal,20,avhrr NOAA 15,/avhrr/nasa/21cr_repro/avcsam,blue,thick,blue_thick,1998.7306,2002.8748,,8662,10175,1514,1998,267,1998-D267,2002,320,2002-D320,408,449,horizontal_visible_segment
+45,horizontal,20,avhrr NOAA 15,/avhrr/nasa/21cr_repro/avcsam,black,thick,black_thick,2002.8748,2012.2486,,10175,13596,3422,2002,320,2002-D320,2012,91,2012-D091,450,544,horizontal_visible_segment
+46,horizontal,21,avhrr NOAA 17,/avhrr/nasa/21cr_repro/avcsam,blue,thick,blue_thick,2002.7761,2010.1765,,10139,12840,2702,2002,284,2002-D284,2010,65,2010-D065,449,523,horizontal_visible_segment
+47,horizontal,21,avhrr NOAA 17,/avhrr/nasa/21cr_repro/avcsam,blue,thin,blue_thin,2010.1765,2013.334,,12840,13992,1153,2010,65,2010-D065,2013,122,2013-D122,524,555,horizontal_visible_segment
+48,horizontal,22,avhrr METOP-A,/avhrr/nasa/21cr_repro/avcsam,blue,thick,blue_thick,2007.315,2012.2486,,11795,13596,1802,2007,115,2007-D115,2012,91,2012-D091,495,544,horizontal_visible_segment
+49,horizontal,22,avhrr METOP-A,/avhrr/nasa/21cr_repro/avcsam,blue,thin,blue_thin,2012.2486,2026.9507,,13596,18963,5368,2012,91,2012-D091,2026,348,2026-D348,545,693,horizontal_visible_segment
+50,horizontal,23,avhrr NOAA 16,/avhrr/nasa/21cr_repro/avcspm,blue,thick,blue_thick,2001.0987,2005.3416,,9527,11075,1549,2001,37,2001-D037,2005,125,2005-D125,432,474,horizontal_visible_segment
+51,horizontal,23,avhrr NOAA 16,/avhrr/nasa/21cr_repro/avcspm,blue,thin,blue_thin,2005.3416,2005.7362,,11075,11219,145,2005,125,2005-D125,2005,269,2005-D269,475,478,horizontal_visible_segment
+52,horizontal,24,avhrr NOAA 18,/avhrr/nasa/21cr_repro/avcspm,blue,thick,blue_thick,2005.4402,2012.2486,,11111,13596,2486,2005,161,2005-D161,2012,91,2012-D091,476,544,horizontal_visible_segment
+53,horizontal,24,avhrr NOAA 18,/avhrr/nasa/21cr_repro/avcspm,blue,thin,blue_thin,2012.2486,2026.9507,,13596,18963,5368,2012,91,2012-D091,2026,348,2026-D348,545,693,horizontal_visible_segment
+54,horizontal,25,cris NPP,/cris/cris,blue,thick,blue_thick,2012.6433,2018.0702,,13740,15721,1982,2012,235,2012-D235,2018,26,2018-D026,549,603,horizontal_visible_segment
+55,horizontal,25,cris NPP,/cris/cris,black,thick,black_thick,2018.0702,2020.3397,,15721,16549,829,2018,26,2018-D026,2020,124,2020-D124,604,626,horizontal_visible_segment
+56,horizontal,26,cris NPP,/cris/crisf4,blue,thick,blue_thick,2017.9715,2021.425,,15685,16946,1262,2017,355,2017-D355,2021,156,2021-D156,603,637,horizontal_visible_segment
+57,horizontal,26,cris NPP,/cris/crisf4,black,thick,black_thick,2021.5237,2024.1879,,16982,17954,973,2021,192,2021-D192,2024,69,2024-D069,639,665,horizontal_visible_segment
+58,horizontal,27,cris NOAA 20,/cris/crisf4,blue,thin,blue_thin,2018.0702,2020.7343,,15721,16694,974,2018,26,2018-D026,2020,269,2020-D269,604,630,horizontal_visible_segment
+59,horizontal,27,cris NOAA 20,/cris/crisf4,blue,thick,blue_thick,2020.7343,2026.556,,16694,18818,2125,2020,269,2020-D269,2026,203,2026-D203,631,689,horizontal_visible_segment
+60,horizontal,27,cris NOAA 20,/cris/crisf4,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+61,horizontal,28,cris NOAA 21,/cris/crisf4,blue,thick,blue_thick,2023.5958,2026.556,,17738,18818,1081,2023,218,2023-D218,2026,203,2026-D203,660,689,horizontal_visible_segment
+62,horizontal,28,cris NOAA 21,/cris/crisf4,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+63,horizontal,29,gmi GPM-core,/gmi/nasa/gmi_v7,blue,thick,blue_thick,2014.1233,2025.3719,,14281,18386,4106,2014,46,2014-D046,2025,136,2025-D136,564,677,horizontal_visible_segment
+64,horizontal,29,gmi GPM-core,/gmi/nasa/gmi_v7,blue,thin,blue_thin,2025.3719,2026.9507,,18386,18963,578,2025,136,2025-D136,2026,348,2026-D348,678,693,horizontal_visible_segment
+65,horizontal,30,hirs TIROS-N,/hirs/1bhrs2,blue,thick,blue_thick,1978.8975,1980.0816,,1423,1855,433,1978,328,1978-D328,1980,30,1980-D030,207,218,horizontal_visible_segment
+66,horizontal,31,hirs NOAA 6,/hirs/1bhrs2,blue,thick,blue_thick,1979.3909,1983.2391,,1603,3008,1406,1979,143,1979-D143,1983,88,1983-D088,212,250,horizontal_visible_segment
+67,horizontal,31,hirs NOAA 6,/hirs/1bhrs2,blue,thin,blue_thin,1983.2391,1985.3112,,3008,3764,757,1983,88,1983-D088,1985,114,1985-D114,251,271,horizontal_visible_segment
+68,horizontal,32,hirs NOAA 7,/hirs/1bhrs2,blue,thick,blue_thick,1981.463,1985.1139,,2359,3692,1334,1981,169,1981-D169,1985,42,1985-D042,233,269,horizontal_visible_segment
+69,horizontal,33,hirs NOAA 8,/hirs/1bhrs2,blue,thick,blue_thick,1983.2391,1984.5218,,3008,3476,469,1983,88,1983-D088,1984,191,1984-D191,251,263,horizontal_visible_segment
+70,horizontal,34,hirs NOAA 9,/hirs/1bhrs2,blue,thick,blue_thick,1984.9165,1988.8634,,3620,5061,1442,1984,335,1984-D335,1988,316,1988-D316,268,307,horizontal_visible_segment
+71,horizontal,35,hirs NOAA 10,/hirs/1bhrs2,blue,thick,blue_thick,1986.7913,1991.7249,,4304,6105,1802,1986,289,1986-D289,1991,265,1991-D265,287,336,horizontal_visible_segment
+72,horizontal,36,hirs NOAA 11,/hirs/1bhrs2,blue,thick,blue_thick,1988.7647,1994.981,,5025,7294,2270,1988,280,1988-D280,1994,359,1994-D359,307,369,horizontal_visible_segment
+73,horizontal,36,hirs NOAA 11,/hirs/1bhrs2,blue,thick,blue_thick,1997.4478,1999.2239,,8194,8842,649,1997,164,1997-D164,1999,82,1999-D082,395,412,horizontal_visible_segment
+74,horizontal,36,hirs NOAA 11,/hirs/1bhrs2,black,thick,black_thick,1999.2239,2000.3093,,8842,9238,397,1999,82,1999-D082,2000,113,2000-D113,413,423,horizontal_visible_segment
+75,horizontal,37,hirs NOAA 12,/hirs/1bhrs2,blue,thick,blue_thick,1991.6262,1991.9222,,6069,6177,109,1991,229,1991-D229,1991,337,1991-D337,336,338,horizontal_visible_segment
+76,horizontal,37,hirs NOAA 12,/hirs/1bhrs2,blue,thick,blue_thick,1992.1195,1997.6452,,6249,8266,2018,1992,44,1992-D044,1997,236,1997-D236,341,396,horizontal_visible_segment
+77,horizontal,37,hirs NOAA 12,/hirs/1bhrs2,black,thick,black_thick,1997.6452,1999.0266,,8266,8770,505,1997,236,1997-D236,1999,10,1999-D010,397,410,horizontal_visible_segment
+78,horizontal,38,hirs NOAA 14,/hirs/1bhrs2,blue,thick,blue_thick,1995.1784,2006.8216,,7366,11615,4250,1995,66,1995-D066,2006,300,2006-D300,372,489,horizontal_visible_segment
+79,horizontal,39,hirs NOAA 15,/hirs/1bhrs3,blue,thick,blue_thick,1998.7306,2000.5066,,8662,9310,649,1998,267,1998-D267,2000,185,2000-D185,408,425,horizontal_visible_segment
+80,horizontal,39,hirs NOAA 15,/hirs/1bhrs3,black,thick,black_thick,2000.5066,2009.4858,,9310,12588,3279,2000,185,2000-D185,2009,178,2009-D178,426,516,horizontal_visible_segment
+81,horizontal,40,hirs NOAA 16,/hirs/1bhrs3,blue,thick,blue_thick,2001.0987,2004.4535,,9527,10751,1225,2001,37,2001-D037,2004,166,2004-D166,432,465,horizontal_visible_segment
+82,horizontal,40,hirs NOAA 16,/hirs/1bhrs3,black,thick,black_thick,2004.4535,2014.518,,10751,14425,3675,2004,166,2004-D166,2014,190,2014-D190,466,567,horizontal_visible_segment
+83,horizontal,41,hirs NOAA 17,/hirs/1bhrs3,blue,thick,blue_thick,2002.5787,2011.9526,,10067,13488,3422,2002,212,2002-D212,2011,348,2011-D348,447,541,horizontal_visible_segment
+84,horizontal,41,hirs NOAA 17,/hirs/1bhrs3,black,thick,black_thick,2011.9526,2013.334,,13488,13992,505,2011,348,2011-D348,2013,122,2013-D122,542,555,horizontal_visible_segment
+85,vertical_marker,42,hirs NOAA 18,/hirs/1bhrs3,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+86,horizontal,42,hirs NOAA 18,/hirs/1bhrs3,black,thick,black_thick,2005.4402,2025.4706,,11111,18422,7312,2005,161,2005-D161,2025,172,2025-D172,476,678,horizontal_visible_segment
+87,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+88,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2010.3245,2010.3245,2010.3245,12894,12894,1,2010,119,2010-D119,2010,119,2010-D119,525,525,vertical_marker_as_one_day_segment
+89,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2010.9165,2010.9165,2010.9165,13110,13110,1,2010,335,2010-D335,2010,335,2010-D335,531,531,vertical_marker_as_one_day_segment
+90,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2011.5085,2011.5085,2011.5085,13326,13326,1,2011,186,2011-D186,2011,186,2011-D186,537,537,vertical_marker_as_one_day_segment
+91,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2012.1992,2012.1992,2012.1992,13578,13578,1,2012,73,2012-D073,2012,73,2012-D073,544,544,vertical_marker_as_one_day_segment
+92,horizontal,43,hirs METOP-B,/hirs/1bhrs4,black,thick,black_thick,2013.038,2020.4383,,13884,16585,2702,2013,14,2013-D014,2020,160,2020-D160,553,627,horizontal_visible_segment
+93,vertical_marker,43,hirs METOP-B,/hirs/1bhrs4,black,marker,black_marker,2022.9545,2022.9545,2022.9545,17504,17504,1,2022,349,2022-D349,2022,349,2022-D349,650,656,vertical_marker_as_one_day_segment
+94,vertical_marker,44,hirs METOP-A,/hirs/1bhrs4,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+95,horizontal,44,hirs METOP-A,/hirs/1bhrs4,blue,thick,blue_thick,2007.315,2015.8994,,11795,14929,3135,2007,115,2007-D115,2015,329,2015-D329,495,581,horizontal_visible_segment
+96,horizontal,44,hirs METOP-A,/hirs/1bhrs4,black,thick,black_thick,2015.9981,2022.0171,,14965,17162,2198,2015,365,2015-D365,2022,7,2022-D007,583,643,horizontal_visible_segment
+97,vertical_marker,45,hirs NOAA 19,/hirs/1bhrs4,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+98,horizontal,45,hirs NOAA 19,/hirs/1bhrs4,blue,thin,blue_thin,2009.1898,2009.5844,,12480,12624,145,2009,70,2009-D070,2009,214,2009-D214,514,517,horizontal_visible_segment
+99,horizontal,45,hirs NOAA 19,/hirs/1bhrs4,blue,thick,blue_thick,2009.5844,2013.63,,12624,14100,1477,2009,214,2009-D214,2013,230,2013-D230,518,558,horizontal_visible_segment
+100,horizontal,45,hirs NOAA 19,/hirs/1bhrs4,black,thick,black_thick,2013.63,2025.4706,,14100,18422,4323,2013,230,2013-D230,2025,172,2025-D172,559,678,horizontal_visible_segment
+101,horizontal,46,iasi METOP-A,/iasi/mtiasi,blue,thick,blue_thick,2007.907,2021.8197,,12012,17090,5079,2007,332,2007-D332,2021,300,2021-D300,501,641,horizontal_visible_segment
+102,vertical_marker,47,iasi METOP-B,/iasi/mtiasi,black,marker,black_marker,2010.3245,2010.3245,2010.3245,12894,12894,1,2010,119,2010-D119,2010,119,2010-D119,525,525,vertical_marker_as_one_day_segment
+103,vertical_marker,47,iasi METOP-B,/iasi/mtiasi,black,marker,black_marker,2010.9165,2010.9165,2010.9165,13110,13110,1,2010,335,2010-D335,2010,335,2010-D335,531,531,vertical_marker_as_one_day_segment
+104,vertical_marker,47,iasi METOP-B,/iasi/mtiasi,black,marker,black_marker,2011.5085,2011.5085,2011.5085,13326,13326,1,2011,186,2011-D186,2011,186,2011-D186,537,537,vertical_marker_as_one_day_segment
+105,vertical_marker,47,iasi METOP-B,/iasi/mtiasi,black,marker,black_marker,2012.1992,2012.1992,2012.1992,13578,13578,1,2012,73,2012-D073,2012,73,2012-D073,544,544,vertical_marker_as_one_day_segment
+106,horizontal,47,iasi METOP-B,/iasi/mtiasi,blue,thin,blue_thin,2013.038,2013.4326,,13884,14028,145,2013,14,2013-D014,2013,158,2013-D158,553,556,horizontal_visible_segment
+107,horizontal,47,iasi METOP-B,/iasi/mtiasi,blue,thick,blue_thick,2013.4326,2026.556,,14028,18818,4791,2013,158,2013-D158,2026,203,2026-D203,557,689,horizontal_visible_segment
+108,horizontal,47,iasi METOP-B,/iasi/mtiasi,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+109,horizontal,48,iasi METOP-C,/iasi/mtiasi,blue,thick,blue_thick,2020.3397,2026.556,,16549,18818,2270,2020,124,2020-D124,2026,203,2026-D203,627,689,horizontal_visible_segment
+110,horizontal,48,iasi METOP-C,/iasi/mtiasi,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+111,vertical_marker,49,mhs NOAA 18,/mhs/1bmhs,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+112,horizontal,49,mhs NOAA 18,/mhs/1bmhs,blue,thick,blue_thick,2005.7362,2018.8596,,11219,16009,4791,2005,269,2005-D269,2018,314,2018-D314,479,611,horizontal_visible_segment
+113,horizontal,49,mhs NOAA 18,/mhs/1bmhs,blue,thin,blue_thin,2018.8596,2026.9507,,16009,18963,2955,2018,314,2018-D314,2026,348,2026-D348,612,693,horizontal_visible_segment
+114,vertical_marker,50,mhs METOP-B,/mhs/1bmhs,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+115,vertical_marker,50,mhs METOP-B,/mhs/1bmhs,black,marker,black_marker,2010.3245,2010.3245,2010.3245,12894,12894,1,2010,119,2010-D119,2010,119,2010-D119,525,525,vertical_marker_as_one_day_segment
+116,vertical_marker,50,mhs METOP-B,/mhs/1bmhs,black,marker,black_marker,2010.9165,2010.9165,2010.9165,13110,13110,1,2010,335,2010-D335,2010,335,2010-D335,531,531,vertical_marker_as_one_day_segment
+117,vertical_marker,50,mhs METOP-B,/mhs/1bmhs,black,marker,black_marker,2011.5085,2011.5085,2011.5085,13326,13326,1,2011,186,2011-D186,2011,186,2011-D186,537,537,vertical_marker_as_one_day_segment
+118,vertical_marker,50,mhs METOP-B,/mhs/1bmhs,black,marker,black_marker,2012.1992,2012.1992,2012.1992,13578,13578,1,2012,73,2012-D073,2012,73,2012-D073,544,544,vertical_marker_as_one_day_segment
+119,horizontal,50,mhs METOP-B,/mhs/1bmhs,blue,thick,blue_thick,2013.038,2026.556,,13884,18818,4935,2013,14,2013-D014,2026,203,2026-D203,553,689,horizontal_visible_segment
+120,horizontal,50,mhs METOP-B,/mhs/1bmhs,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+121,vertical_marker,51,mhs METOP-A,/mhs/1bmhs,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+122,horizontal,51,mhs METOP-A,/mhs/1bmhs,blue,thick,blue_thick,2007.315,2019.3529,,11795,16189,4395,2007,115,2007-D115,2019,129,2019-D129,495,616,horizontal_visible_segment
+123,horizontal,51,mhs METOP-A,/mhs/1bmhs,black,thick,black_thick,2019.3529,2022.0171,,16189,17162,974,2019,129,2019-D129,2022,7,2022-D007,617,643,horizontal_visible_segment
+124,vertical_marker,52,mhs NOAA 19,/mhs/1bmhs,black,marker,black_marker,2005.0949,2005.0949,2005.0949,10985,10985,1,2005,35,2005-D035,2005,35,2005-D035,472,472,vertical_marker_as_one_day_segment
+125,horizontal,52,mhs NOAA 19,/mhs/1bmhs,blue,thin,blue_thin,2009.1898,2009.5844,,12480,12624,145,2009,70,2009-D070,2009,214,2009-D214,514,517,horizontal_visible_segment
+126,horizontal,52,mhs NOAA 19,/mhs/1bmhs,blue,thick,blue_thick,2009.5844,2025.5693,,12624,18458,5835,2009,214,2009-D214,2025,208,2025-D208,518,679,horizontal_visible_segment
+127,horizontal,52,mhs NOAA 19,/mhs/1bmhs,blue,thin,blue_thin,2025.5693,2026.9507,,18458,18963,506,2025,208,2025-D208,2026,348,2026-D348,680,693,horizontal_visible_segment
+128,horizontal,53,mhs METOP-C,/mhs/1bmhs,blue,thick,blue_thick,2019.7476,2026.556,,16333,18818,2486,2019,273,2019-D273,2026,203,2026-D203,621,689,horizontal_visible_segment
+129,horizontal,53,mhs METOP-C,/mhs/1bmhs,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+130,horizontal,54,msu TIROS-N,/msu/1bmsu,blue,thick,blue_thick,1978.8975,1979.5882,,1423,1675,253,1978,328,1978-D328,1979,215,1979-D215,207,213,horizontal_visible_segment
+131,horizontal,55,msu NOAA 6,/msu/1bmsu,blue,thick,blue_thick,1979.3909,1983.2391,,1603,3008,1406,1979,143,1979-D143,1983,88,1983-D088,212,250,horizontal_visible_segment
+132,horizontal,55,msu NOAA 6,/msu/1bmsu,blue,thick,blue_thick,1985.1139,1985.5085,,3692,3836,145,1985,42,1985-D042,1985,186,1985-D186,270,273,horizontal_visible_segment
+133,horizontal,55,msu NOAA 6,/msu/1bmsu,blue,thick,blue_thick,1985.7059,1986.9886,,3908,4376,469,1985,258,1985-D258,1986,361,1986-D361,276,288,horizontal_visible_segment
+134,horizontal,57,msu NOAA 7,/msu/1bmsu,blue,thick,blue_thick,1981.463,1985.2125,,2359,3728,1370,1981,169,1981-D169,1985,78,1985-D078,233,270,horizontal_visible_segment
+135,horizontal,58,msu NOAA 8,/msu/1bmsu,blue,thick,blue_thick,1983.2391,1984.5218,,3008,3476,469,1983,88,1983-D088,1984,191,1984-D191,251,263,horizontal_visible_segment
+136,vertical_marker,58,msu NOAA 8,/msu/1bmsu,black,marker,black_marker,1985.6072,1985.6072,1985.6072,3872,3872,1,1985,222,1985-D222,1985,222,1985-D222,273,276,vertical_marker_as_one_day_segment
+137,horizontal,59,msu NOAA 9,/msu/1bmsu,blue,thick,blue_thick,1984.9165,1987.186,,3620,4448,829,1984,335,1984-D335,1987,68,1987-D068,268,290,horizontal_visible_segment
+138,horizontal,59,msu NOAA 9,/msu/1bmsu,black,thick,black_thick,1987.2846,1988.8634,,4484,5061,578,1987,104,1987-D104,1988,316,1988-D316,292,307,horizontal_visible_segment
+139,horizontal,60,msu NOAA 10,/msu/1bmsu,blue,thick,blue_thick,1986.7913,1991.7249,,4304,6105,1802,1986,289,1986-D289,1991,265,1991-D265,287,336,horizontal_visible_segment
+140,horizontal,61,msu NOAA 11,/msu/1bmsu,blue,thick,blue_thick,1988.7647,1995.3757,,5025,7438,2414,1988,280,1988-D280,1995,138,1995-D138,307,373,horizontal_visible_segment
+141,horizontal,61,msu NOAA 11,/msu/1bmsu,blue,thick,blue_thick,1997.4478,1999.2239,,8194,8842,649,1997,164,1997-D164,1999,82,1999-D082,395,412,horizontal_visible_segment
+142,horizontal,62,msu NOAA 12,/msu/1bmsu,blue,thick,blue_thick,1991.5275,1997.4478,,6033,8194,2162,1991,193,1991-D193,1997,164,1997-D164,335,394,horizontal_visible_segment
+143,horizontal,62,msu NOAA 12,/msu/1bmsu,black,thick,black_thick,1997.4478,1999.0266,,8194,8770,577,1997,164,1997-D164,1999,10,1999-D010,395,410,horizontal_visible_segment
+144,horizontal,63,msu NOAA 14,/msu/1bmsu,blue,thick,blue_thick,1994.981,2006.8216,,7294,11615,4322,1994,359,1994-D359,2006,300,2006-D300,370,489,horizontal_visible_segment
+145,horizontal,64,saphir Megha-Tropiques,/saphir/saphir,blue,thin,blue_thin,2016.8861,2020.7343,,15289,16694,1406,2016,324,2016-D324,2020,269,2020-D269,592,630,horizontal_visible_segment
+146,horizontal,64,saphir Megha-Tropiques,/saphir/saphir,blue,thick,blue_thick,2020.7343,2022.0171,,16694,17162,469,2020,269,2020-D269,2022,7,2022-D007,631,643,horizontal_visible_segment
+147,horizontal,65,seviri METEOSAT 8,/seviri/sevasr,blue,thin,blue_thin,2016.9848,2022.0171,,15325,17162,1838,2016,360,2016-D360,2022,7,2022-D007,593,643,horizontal_visible_segment
+148,horizontal,65,seviri METEOSAT 8,/seviri/sevasr,blue,thick,blue_thick,2022.0171,2022.5104,,17162,17342,181,2022,7,2022-D007,2022,187,2022-D187,644,648,horizontal_visible_segment
+149,horizontal,65,seviri METEOSAT 8,/seviri/sevasr,blue,thin,blue_thin,2022.5104,2026.9507,,17342,18963,1622,2022,187,2022-D187,2026,348,2026-D348,649,693,horizontal_visible_segment
+150,horizontal,66,seviri METEOSAT 11,/seviri/sevasr,blue,thin,blue_thin,2018.2676,2022.0171,,15793,17162,1370,2018,98,2018-D098,2022,7,2022-D007,606,643,horizontal_visible_segment
+151,horizontal,66,seviri METEOSAT 11,/seviri/sevasr,blue,thick,blue_thick,2022.0171,2023.2998,,17162,17630,469,2022,7,2022-D007,2023,110,2023-D110,644,656,horizontal_visible_segment
+152,horizontal,66,seviri METEOSAT 11,/seviri/sevasr,blue,thin,blue_thin,2023.2998,2026.9507,,17630,18963,1334,2023,110,2023-D110,2026,348,2026-D348,657,693,horizontal_visible_segment
+153,horizontal,67,seviri METEOSAT 9,/seviri/sevasr,blue,thin,blue_thin,2007.1176,2013.1366,,11723,13920,2198,2007,43,2007-D043,2013,50,2013-D050,493,553,horizontal_visible_segment
+154,horizontal,67,seviri METEOSAT 9,/seviri/sevasr,black,thick,black_thick,2022.3131,2026.4573,,17270,18782,1513,2022,115,2022-D115,2026,167,2026-D167,647,688,horizontal_visible_segment
+155,horizontal,68,seviri METEOSAT 10,/seviri/sevasr,blue,thin,blue_thin,2012.9393,2018.4649,,13848,15865,2018,2012,343,2012-D343,2018,170,2018-D170,552,607,horizontal_visible_segment
+156,horizontal,68,seviri METEOSAT 10,/seviri/sevasr,black,thick,black_thick,2023.2011,2026.4573,,17594,18782,1189,2023,74,2023-D074,2026,167,2026-D167,656,688,horizontal_visible_segment
+157,horizontal,69,seviri METEOSAT 9,/seviri/sevcsr,blue,thin,blue_thin,2007.1176,2012.0512,,11723,13524,1802,2007,43,2007-D043,2012,19,2012-D019,493,542,horizontal_visible_segment
+158,horizontal,69,seviri METEOSAT 9,/seviri/sevcsr,blue,thick,blue_thick,2012.0512,2013.1366,,13524,13920,397,2012,19,2012-D019,2013,50,2013-D050,543,553,horizontal_visible_segment
+159,vertical_marker,69,seviri METEOSAT 9,/seviri/sevcsr,black,marker,black_marker,2018.2182,2018.2182,2018.2182,15775,15775,1,2018,80,2018-D080,2018,80,2018-D080,605,605,vertical_marker_as_one_day_segment
+160,vertical_marker,69,seviri METEOSAT 9,/seviri/sevcsr,black,marker,black_marker,2019.0569,2019.0569,2019.0569,16081,16081,1,2019,21,2019-D021,2019,21,2019-D021,613,614,vertical_marker_as_one_day_segment
+161,vertical_marker,69,seviri METEOSAT 9,/seviri/sevcsr,black,marker,black_marker,2020.0436,2020.0436,2020.0436,16441,16441,1,2020,16,2020-D016,2020,16,2020-D016,623,624,vertical_marker_as_one_day_segment
+162,vertical_marker,69,seviri METEOSAT 9,/seviri/sevcsr,black,marker,black_marker,2022.0664,2022.0664,2022.0664,17180,17180,1,2022,25,2022-D025,2022,25,2022-D025,644,644,vertical_marker_as_one_day_segment
+163,vertical_marker,69,seviri METEOSAT 9,/seviri/sevcsr,black,marker,black_marker,2022.5598,2022.5598,2022.5598,17360,17360,1,2022,205,2022-D205,2022,205,2022-D205,647,651,vertical_marker_as_one_day_segment
+164,vertical_marker,70,seviri METEOSAT 10,/seviri/sevcsr,black,marker,black_marker,2012.1992,2012.1992,2012.1992,13578,13578,1,2012,73,2012-D073,2012,73,2012-D073,544,544,vertical_marker_as_one_day_segment
+165,horizontal,70,seviri METEOSAT 10,/seviri/sevcsr,blue,thick,blue_thick,2012.9393,2018.2676,,13848,15793,1946,2012,343,2012-D343,2018,98,2018-D098,552,605,horizontal_visible_segment
+166,horizontal,71,seviri METEOSAT 8,/seviri/sevcsr,blue,thick,blue_thick,2016.9848,2022.5104,,15325,17342,2018,2016,360,2016-D360,2022,187,2022-D187,593,648,horizontal_visible_segment
+167,horizontal,71,seviri METEOSAT 8,/seviri/sevcsr,blue,thin,blue_thin,2022.5104,2026.9507,,17342,18963,1622,2022,187,2022-D187,2026,348,2026-D348,649,693,horizontal_visible_segment
+168,horizontal,72,seviri METEOSAT 11,/seviri/sevcsr,blue,thick,blue_thick,2018.2676,2022.8065,,15793,17450,1658,2018,98,2018-D098,2022,295,2022-D295,606,651,horizontal_visible_segment
+169,horizontal,72,seviri METEOSAT 11,/seviri/sevcsr,blue,thin,blue_thin,2022.8065,2026.9507,,17450,18963,1514,2022,295,2022-D295,2026,348,2026-D348,652,693,horizontal_visible_segment
+170,horizontal,73,ssmi DMSP 8,/ssmi/eumetsat,blue,thin,blue_thin,1987.3833,1987.8767,,4520,4700,181,1987,140,1987-D140,1987,320,1987-D320,293,297,horizontal_visible_segment
+171,horizontal,73,ssmi DMSP 8,/ssmi/eumetsat,blue,thick,blue_thick,1987.8767,1989.0607,,4700,5133,434,1987,320,1987-D320,1989,23,1989-D023,298,309,horizontal_visible_segment
+172,horizontal,73,ssmi DMSP 8,/ssmi/eumetsat,blue,thin,blue_thin,1989.0607,1989.8501,,5133,5421,289,1989,23,1989-D023,1989,311,1989-D311,310,317,horizontal_visible_segment
+173,horizontal,73,ssmi DMSP 8,/ssmi/eumetsat,blue,thick,blue_thick,1989.8501,1992.0209,,5421,6213,793,1989,311,1989-D311,1992,8,1992-D008,318,339,horizontal_visible_segment
+174,horizontal,74,ssmi DMSP 10,/ssmi/eumetsat,blue,thick,blue_thick,1990.9355,1997.9412,,5817,8374,2558,1990,342,1990-D342,1997,344,1997-D344,329,399,horizontal_visible_segment
+175,horizontal,75,ssmi DMSP 11,/ssmi/eumetsat,blue,thick,blue_thick,1991.9222,2000.0133,,6177,9130,2954,1991,337,1991-D337,2000,5,2000-D005,339,420,horizontal_visible_segment
+176,horizontal,76,ssmi DMSP 13,/ssmi/eumetsat,blue,thick,blue_thick,1995.1784,2009.0911,,7366,12444,5079,1995,66,1995-D066,2009,34,2009-D034,372,512,horizontal_visible_segment
+177,horizontal,77,ssmi DMSP 14,/ssmi/eumetsat,blue,thick,blue_thick,1997.2505,2008.6964,,8122,12300,4179,1997,92,1997-D092,2008,255,2008-D255,393,508,horizontal_visible_segment
+178,horizontal,78,ssmi DMSP 15,/ssmi/eumetsat,blue,thick,blue_thick,2000.0133,2006.723,,9130,11579,2450,2000,5,2000-D005,2006,264,2006-D264,421,488,horizontal_visible_segment
+179,horizontal,79,ssmi DMSP 11,/ssmi/ssmit,blue,thin,blue_thin,1991.8235,2000.0133,,6141,9130,2990,1991,301,1991-D301,2000,5,2000-D005,338,420,horizontal_visible_segment
+180,horizontal,80,ssmi DMSP 14,/ssmi/ssmit,blue,thin,blue_thin,1997.2505,2000.112,,8122,9166,1045,1997,92,1997-D092,2000,41,2000-D041,393,421,horizontal_visible_segment
+181,horizontal,80,ssmi DMSP 14,/ssmi/ssmit,blue,thick,blue_thick,2000.112,2001.592,,9166,9707,542,2000,41,2000-D041,2001,217,2001-D217,422,436,horizontal_visible_segment
+182,horizontal,80,ssmi DMSP 14,/ssmi/ssmit,blue,thin,blue_thin,2001.592,2001.888,,9707,9815,109,2001,217,2001-D217,2001,325,2001-D325,437,439,horizontal_visible_segment
+183,horizontal,80,ssmi DMSP 14,/ssmi/ssmit,blue,thick,blue_thick,2001.888,2003.0721,,9815,10247,433,2001,325,2001-D325,2003,27,2003-D027,440,451,horizontal_visible_segment
+184,horizontal,80,ssmi DMSP 14,/ssmi/ssmit,blue,thick,blue_thick,2003.2694,2008.6964,,10319,12300,1982,2003,99,2003-D099,2008,255,2008-D255,454,508,horizontal_visible_segment
+185,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,blue,thin,blue_thin,1995.1784,2000.112,,7366,9166,1801,1995,66,1995-D066,2000,41,2000-D041,372,421,horizontal_visible_segment
+186,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,blue,thick,blue_thick,2000.112,2001.592,,9166,9707,542,2000,41,2000-D041,2001,217,2001-D217,422,436,horizontal_visible_segment
+187,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,blue,thin,blue_thin,2001.592,2001.888,,9707,9815,109,2001,217,2001-D217,2001,325,2001-D325,437,439,horizontal_visible_segment
+188,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,blue,thick,blue_thick,2001.888,2003.0721,,9815,10247,433,2001,325,2001-D325,2003,27,2003-D027,440,451,horizontal_visible_segment
+189,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,blue,thick,blue_thick,2003.2694,2009.0911,,10319,12444,2126,2003,99,2003-D099,2009,34,2009-D034,454,512,horizontal_visible_segment
+190,horizontal,81,ssmi DMSP 13,/ssmi/ssmit,black,thick,black_thick,2009.0911,2009.9791,,12444,12768,325,2009,34,2009-D034,2009,358,2009-D358,513,521,horizontal_visible_segment
+191,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,blue,thin,blue_thin,1999.8159,2000.112,,9058,9166,109,1999,298,1999-D298,2000,41,2000-D041,419,421,horizontal_visible_segment
+192,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,blue,thick,blue_thick,2000.112,2001.592,,9166,9707,542,2000,41,2000-D041,2001,217,2001-D217,422,436,horizontal_visible_segment
+193,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,blue,thin,blue_thin,2001.592,2001.888,,9707,9815,109,2001,217,2001-D217,2001,325,2001-D325,437,439,horizontal_visible_segment
+194,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,blue,thick,blue_thick,2001.888,2003.0721,,9815,10247,433,2001,325,2001-D325,2003,27,2003-D027,440,451,horizontal_visible_segment
+195,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,blue,thick,blue_thick,2003.2694,2006.6243,,10319,11543,1225,2003,99,2003-D099,2006,228,2006-D228,454,487,horizontal_visible_segment
+196,horizontal,82,ssmi DMSP 15,/ssmi/ssmit,black,thick,black_thick,2006.723,2010.7685,,11579,13056,1478,2006,264,2006-D264,2010,281,2010-D281,489,529,horizontal_visible_segment
+197,horizontal,83,ssmis DMSP 16,/ssmis/eumetsat,blue,thin,blue_thin,2003.7628,2005.9336,,10499,11291,793,2003,279,2003-D279,2005,341,2005-D341,459,480,horizontal_visible_segment
+198,horizontal,83,ssmis DMSP 16,/ssmis/eumetsat,blue,thick,blue_thick,2005.9336,2016.0968,,11291,15001,3711,2005,341,2005-D341,2016,36,2016-D036,481,583,horizontal_visible_segment
+199,horizontal,83,ssmis DMSP 16,/ssmis/eumetsat,blue,thin,blue_thin,2016.0968,2026.9507,,15001,18963,3963,2016,36,2016-D036,2026,348,2026-D348,584,693,horizontal_visible_segment
+200,horizontal,84,ssmis DMSP17,/ssmis/eumetsat,blue,thick,blue_thick,2006.8216,2007.5123,,11615,11867,253,2006,300,2006-D300,2007,187,2007-D187,490,496,horizontal_visible_segment
+201,horizontal,84,ssmis DMSP17,/ssmis/eumetsat,blue,thin,blue_thin,2007.5123,2008.1044,,11867,12084,218,2007,187,2007-D187,2008,39,2008-D039,497,502,horizontal_visible_segment
+202,horizontal,84,ssmis DMSP17,/ssmis/eumetsat,blue,thick,blue_thick,2008.1044,2016.0968,,12084,15001,2918,2008,39,2008-D039,2016,36,2016-D036,503,583,horizontal_visible_segment
+203,horizontal,84,ssmis DMSP17,/ssmis/eumetsat,blue,thin,blue_thin,2016.0968,2026.9507,,15001,18963,3963,2016,36,2016-D036,2026,348,2026-D348,584,693,horizontal_visible_segment
+204,horizontal,85,ssmis DMSP18,/ssmis/eumetsat,blue,thick,blue_thick,2010.0778,2015.6034,,12804,14821,2018,2010,29,2010-D029,2015,221,2015-D221,523,578,horizontal_visible_segment
+205,horizontal,86,ssmis DMSP 16,/ssmis/ssmisu,blue,thin,blue_thin,2003.7628,2009.7818,,10499,12696,2198,2003,279,2003-D279,2009,286,2009-D286,459,519,horizontal_visible_segment
+206,horizontal,86,ssmis DMSP 16,/ssmis/ssmisu,blue,thick,blue_thick,2009.7818,2016.2941,,12696,15073,2378,2009,286,2009-D286,2016,108,2016-D108,520,585,horizontal_visible_segment
+207,horizontal,86,ssmis DMSP 16,/ssmis/ssmisu,blue,thin,blue_thin,2016.2941,2026.9507,,15073,18963,3891,2016,108,2016-D108,2026,348,2026-D348,586,693,horizontal_visible_segment
+208,horizontal,87,ssmis DMSP17,/ssmis/ssmisu,blue,thin,blue_thin,2006.8216,2009.7818,,11615,12696,1082,2006,300,2006-D300,2009,286,2009-D286,490,519,horizontal_visible_segment
+209,horizontal,87,ssmis DMSP17,/ssmis/ssmisu,blue,thick,blue_thick,2009.7818,2026.556,,12696,18818,6123,2009,286,2009-D286,2026,203,2026-D203,520,689,horizontal_visible_segment
+210,horizontal,87,ssmis DMSP17,/ssmis/ssmisu,blue,thin,blue_thin,2026.556,2026.9507,,18818,18963,146,2026,203,2026-D203,2026,348,2026-D348,690,693,horizontal_visible_segment
+211,horizontal,88,ssmis DMSP18,/ssmis/ssmisu,blue,thin,blue_thin,2009.8805,2010.2751,,12732,12876,145,2009,322,2009-D322,2010,101,2010-D101,521,524,horizontal_visible_segment
+212,horizontal,88,ssmis DMSP18,/ssmis/ssmisu,blue,thick,blue_thick,2010.2751,2015.6034,,12876,14821,1946,2010,101,2010-D101,2015,221,2015-D221,525,578,horizontal_visible_segment
+213,horizontal,88,ssmis DMSP18,/ssmis/ssmisu,black,thick,black_thick,2015.6034,2026.4573,,14821,18782,3962,2015,221,2015-D221,2026,167,2026-D167,579,688,horizontal_visible_segment
+214,vertical_marker,89,ssmis DMSP-19,/ssmis/ssmisu,black,marker,black_marker,2010.9165,2010.9165,2010.9165,13110,13110,1,2010,335,2010-D335,2010,335,2010-D335,531,531,vertical_marker_as_one_day_segment
+215,vertical_marker,89,ssmis DMSP-19,/ssmis/ssmisu,black,marker,black_marker,2015.8501,2015.8501,2015.8501,14911,14911,1,2015,311,2015-D311,2015,311,2015-D311,578,584,vertical_marker_as_one_day_segment
+216,horizontal,90,ssu TIROS-N,/ssu/1bssu,blue,thick,blue_thick,1978.8975,1980.0816,,1423,1855,433,1978,328,1978-D328,1980,30,1980-D030,207,218,horizontal_visible_segment
+217,horizontal,90,ssu TIROS-N,/ssu/1bssu,blue,thin,blue_thin,1980.0816,1981.167,,1855,2251,397,1980,30,1980-D030,1981,61,1981-D061,219,229,horizontal_visible_segment
+218,horizontal,91,ssu NOAA 6,/ssu/1bssu,blue,thick,blue_thick,1979.3909,1983.3378,,1603,3044,1442,1979,143,1979-D143,1983,124,1983-D124,212,251,horizontal_visible_segment
+219,horizontal,91,ssu NOAA 6,/ssu/1bssu,blue,thin,blue_thin,1985.1139,1985.6072,,3692,3872,181,1985,42,1985-D042,1985,222,1985-D222,270,274,horizontal_visible_segment
+220,horizontal,91,ssu NOAA 6,/ssu/1bssu,blue,thick,blue_thick,1985.6072,1986.9886,,3872,4376,505,1985,222,1985-D222,1986,361,1986-D361,275,288,horizontal_visible_segment
+221,horizontal,92,ssu NOAA 7,/ssu/1bssu,blue,thick,blue_thick,1981.5617,1985.1139,,2396,3692,1297,1981,206,1981-D206,1985,42,1985-D042,234,269,horizontal_visible_segment
+222,horizontal,93,ssu NOAA 8,/ssu/1bssu,blue,thick,blue_thick,1983.2391,1984.5218,,3008,3476,469,1983,88,1983-D088,1984,191,1984-D191,251,263,horizontal_visible_segment
+223,horizontal,94,ssu NOAA 9,/ssu/1bssu,blue,thick,blue_thick,1984.9165,1988.8634,,3620,5061,1442,1984,335,1984-D335,1988,316,1988-D316,268,307,horizontal_visible_segment
+224,horizontal,95,ssu NOAA 11,/ssu/1bssu,blue,thick,blue_thick,1988.7647,1995.0797,,5025,7330,2306,1988,280,1988-D280,1995,30,1995-D030,307,370,horizontal_visible_segment
+225,horizontal,95,ssu NOAA 11,/ssu/1bssu,black,thick,black_thick,1997.4478,1998.7306,,8194,8662,469,1997,164,1997-D164,1998,267,1998-D267,395,407,horizontal_visible_segment
+226,horizontal,95,ssu NOAA 11,/ssu/1bssu,blue,thick,blue_thick,1998.7306,1999.2239,,8662,8842,181,1998,267,1998-D267,1999,82,1999-D082,408,412,horizontal_visible_segment
+227,horizontal,95,ssu NOAA 11,/ssu/1bssu,black,thick,black_thick,1999.2239,2004.4535,,8842,10751,1910,1999,82,1999-D082,2004,166,2004-D166,413,465,horizontal_visible_segment
+228,horizontal,96,ssu NOAA 14,/ssu/1bssu,blue,thick,blue_thick,1994.981,2006.0323,,7294,11327,4034,1994,359,1994-D359,2006,12,2006-D012,370,481,horizontal_visible_segment
+229,horizontal,96,ssu NOAA 14,/ssu/1bssu,blue,thin,blue_thin,2006.0323,2006.4269,,11327,11471,145,2006,12,2006-D012,2006,156,2006-D156,482,485,horizontal_visible_segment
+230,horizontal,97,trmm TRMM,/trmm/nasa/tmi1,black,thick,black_thick,1997.9412,2014.814,,8374,14533,6160,1997,344,1997-D344,2014,298,2014-D298,400,570,horizontal_visible_segment

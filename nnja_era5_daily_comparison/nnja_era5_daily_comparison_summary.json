@@ -1,0 +1,25 @@
+{
+  "base_year": 1978,
+  "end_year_exclusive": 2020,
+  "comparison_window": "1978-D001..2019-D365",
+  "nnja_input_segments": 230,
+  "era_input_segments": 225,
+  "unique_match_keys": 95,
+  "comparison_segments": 622,
+  "daily_long_active_rows": 274381,
+  "matrix_rows": 872,
+  "status_day_counts": {
+    "ERA5 Only": 30157,
+    "ERA-Interim Only": 1075,
+    "NNJA Only": 85537,
+    "Both": 157612
+  },
+  "detailed_status_day_counts": {
+    "ERA5 Only": 30157,
+    "ERA-Interim Only (not ERA5)": 1075,
+    "NNJA Only": 79882,
+    "Both": 157085,
+    "Both + ERA-Interim-only marker": 527,
+    "NNJA + ERA-Interim-only (not ERA5)": 5655
+  }
+}
