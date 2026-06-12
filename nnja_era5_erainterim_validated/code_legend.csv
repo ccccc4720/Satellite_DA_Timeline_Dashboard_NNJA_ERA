@@ -1,0 +1,11 @@
+Category,Color_Family,Meaning
+ERA5,blue,ERA5 active only.
+ERA-Interim,light blue,ERA-Interim active only; period clipped to 1979-01 through 2019-09.
+"ERA5, ERA-Interim",mid blue,"ERA5 and ERA-Interim active, NNJA inactive."
+"ERA5, ERA-Interim, NNJA",dark green,All three active.
+"ERA5, NNJA",green,"ERA5 and NNJA active, ERA-Interim inactive."
+"ERA-Interim, NNJA",light green,"ERA-Interim and NNJA active, ERA5 inactive."
+only NNJA,orange,NNJA active only.
+ERA source grey/blue,source legend,ERA source colors that imply both ERA5 and ERA-Interim before ERA-Interim cap.
+ERA source green,source legend,"ERA5 active, not ERA-Interim."
+ERA source red,source legend,"ERA-Interim active, not ERA5."
