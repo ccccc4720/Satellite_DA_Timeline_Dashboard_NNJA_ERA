@@ -1,167 +1,219 @@
 from pathlib import Path
 from datetime import datetime, date
-from functools import reduce
-from operator import or_
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 
 st.set_page_config(layout="wide", page_title="NNJA / ERA5 / ERA-Interim DA Timeline")
+
 APP_DIR = Path(__file__).resolve().parent
-DATA_CSV_CANDIDATES = [
-    APP_DIR / "nnja_era5_erainterim_extended_inventory.csv",
-    APP_DIR / "nnja_era5_erainterim_extended" / "nnja_era5_erainterim_extended_inventory.csv",
+DATA_CANDIDATES = [
+    APP_DIR / "nnja_era5_erainterim_validated_inventory.csv",
+    APP_DIR / "nnja_era5_erainterim_validated" / "nnja_era5_erainterim_validated_inventory.csv",
 ]
-DATA_XLSX_CANDIDATES = [
-    APP_DIR / "nnja_era5_erainterim_extended_comparison.xlsx",
-    APP_DIR / "nnja_era5_erainterim_extended" / "nnja_era5_erainterim_extended_comparison.xlsx",
+XLSX_CANDIDATES = [
+    APP_DIR / "nnja_era5_erainterim_validated_comparison.xlsx",
+    APP_DIR / "nnja_era5_erainterim_validated" / "nnja_era5_erainterim_validated_comparison.xlsx",
 ]
-DATA_OPTIONS = ["ERA5", "ERA-Interim", "NNJA", "(ERA5, ERA-Interim, NNJA)", "(ERA5, NNJA)", "(ERA-Interim, NNJA)", "only NNJA"]
-EXACT_CATEGORY_ORDER = ["ERA5", "ERA-Interim", "(ERA5, ERA-Interim)", "(ERA5, ERA-Interim, NNJA)", "(ERA5, NNJA)", "(ERA-Interim, NNJA)", "only NNJA"]
-CATEGORY_COLOR_MAP = {
-    "ERA5": "#1D4ED8",
-    "ERA-Interim": "#60A5FA",
-    "(ERA5, ERA-Interim)": "#3B82F6",
-    "(ERA5, ERA-Interim, NNJA)": "#16A34A",
-    "(ERA5, NNJA)": "#22C55E",
-    "(ERA-Interim, NNJA)": "#86EFAC",
-    "only NNJA": "#F59E0B",
+
+DATA_CSV = next((p for p in DATA_CANDIDATES if p.exists()), DATA_CANDIDATES[0])
+DATA_XLSX = next((p for p in XLSX_CANDIDATES if p.exists()), XLSX_CANDIDATES[0])
+
+DATA_OPTIONS = [
+    "ERA5",
+    "ERA-Interim",
+    "NNJA",
+    "ERA5, ERA-Interim, NNJA",
+    "ERA5, NNJA",
+    "ERA-Interim, NNJA",
+    "only NNJA",
+]
+
+COLOR_MAP = {
+    "ERA5": "#1d4ed8",
+    "ERA-Interim": "#93c5fd",
+    "ERA5, ERA-Interim": "#3b82f6",
+    "ERA5, ERA-Interim, NNJA": "#166534",
+    "ERA5, NNJA": "#22c55e",
+    "ERA-Interim, NNJA": "#86efac",
+    "only NNJA": "#f59e0b",
 }
 
-def option_to_mask(df: pd.DataFrame, option: str) -> pd.Series:
+DISPLAY_COLS = [
+    "Sensor_Sat", "Sensor", "Satellite", "Section", "Start_Date", "End_Date",
+    "Exact_Category", "Selection_Flags", "Duration_Days", "NNJA_Active",
+    "ERA5_Active", "ERA_Interim_Active", "Derived_Replacement_Satellite",
+    "Replacement_From", "Extension_Action", "Validation_Basis", "Validation_Source_URLs",
+    "NNJA_Segment_IDs", "ERA5_Segment_IDs", "ERA_Interim_Segment_IDs",
+]
+
+@st.cache_data(show_spinner="Loading validated NNJA / ERA5 / ERA-Interim inventory...")
+def load_data(csv_path: str, mtime: float) -> pd.DataFrame:
+    df = pd.read_csv(csv_path)
+    df["Start_Date"] = pd.to_datetime(df["Start_Date"], format="mixed")
+    df["End_Date"] = pd.to_datetime(df["End_Date"], format="mixed")
+    for col in ["NNJA_Active", "ERA5_Active", "ERA_Interim_Active", "Beyond_ERA_Source_Edge", "Derived_Replacement_Satellite"]:
+        if col in df.columns:
+            df[col] = df[col].astype(str).str.lower().eq("true")
+    dedupe_cols = [
+        "Match_Key", "Start_Abs_Day_365", "End_Abs_Day_365", "Exact_Category",
+        "NNJA_Segment_IDs", "ERA5_Segment_IDs", "ERA_Interim_Segment_IDs",
+        "Extension_Action", "Derived_Replacement_Satellite",
+    ]
+    dedupe_cols = [c for c in dedupe_cols if c in df.columns]
+    return df.drop_duplicates(subset=dedupe_cols).copy()
+
+
+def option_mask(df: pd.DataFrame, option: str, exact_only: bool) -> pd.Series:
+    if exact_only and option not in {"ERA5", "ERA-Interim", "NNJA"}:
+        return df["Exact_Category"].astype(str).eq(option)
     if option == "ERA5":
         return df["ERA5_Active"]
     if option == "ERA-Interim":
         return df["ERA_Interim_Active"]
     if option == "NNJA":
         return df["NNJA_Active"]
-    if option == "(ERA5, ERA-Interim, NNJA)":
-        return df["ERA5_Active"] & df["ERA_Interim_Active"] & df["NNJA_Active"]
-    if option == "(ERA5, NNJA)":
-        return df["ERA5_Active"] & df["NNJA_Active"]
-    if option == "(ERA-Interim, NNJA)":
-        return df["ERA_Interim_Active"] & df["NNJA_Active"]
-    if option == "only NNJA":
-        return df["NNJA_Active"] & ~df["ERA5_Active"] & ~df["ERA_Interim_Active"]
-    return pd.Series(False, index=df.index)
+    return df["Selection_Flags"].astype(str).str.contains(option, regex=False, na=False)
 
-@st.cache_data(show_spinner=False)
-def locate_data_file() -> tuple[str, str, float]:
-    for p in DATA_CSV_CANDIDATES:
-        if p.exists():
-            return str(p), "csv", p.stat().st_mtime
-    for p in DATA_XLSX_CANDIDATES:
-        if p.exists():
-            return str(p), "xlsx", p.stat().st_mtime
-    raise FileNotFoundError("Cannot find nnja_era5_erainterim_extended_inventory.csv beside app.py or in nnja_era5_erainterim_extended/.")
 
-@st.cache_data(show_spinner=True)
-def load_data(path: str, kind: str, mtime: float) -> pd.DataFrame:
-    if kind == "csv":
-        df = pd.read_csv(path)
-    else:
-        df = pd.read_excel(path, sheet_name="Comparison_Segments")
-    df["Start_Date"] = pd.to_datetime(df["Start_Date"])
-    df["End_Date"] = pd.to_datetime(df["End_Date"])
-    for col in ["NNJA_Active", "ERA5_Active", "ERA_Interim_Active", "Beyond_ERA_Source_Edge"]:
-        if col not in df.columns:
-            df[col] = False
-        df[col] = df[col].astype(str).str.lower().isin(["true", "1", "yes"])
-    for col, default in {
-        "Section": "Unknown", "Sensor": "Unknown", "Satellite": "Unknown", "Sensor_Sat": "Unknown", "Match_Key": "Unknown",
-        "Exact_Category": "Unknown", "Dataset_Category": "Unknown", "Selection_Flags": "", "NNJA_Codes": "", "ERA5_Codes": "",
-        "ERA_Interim_Codes": "", "ERA_Visible_Colors": "", "NNJA_Source_Labels": "", "ERA_Source_Labels": "",
-        "NNJA_Segment_IDs": "", "ERA5_Segment_IDs": "", "ERA_Interim_Segment_IDs": "",
-    }.items():
-        if col not in df.columns:
-            df[col] = default
-    dedupe = ["Match_Key", "Start_Abs_Day_365", "End_Abs_Day_365", "Exact_Category", "NNJA_Segment_IDs", "ERA5_Segment_IDs", "ERA_Interim_Segment_IDs"]
-    return df.drop_duplicates(subset=[c for c in dedupe if c in df.columns]).copy()
+def clip_to_window(df: pd.DataFrame, start_dt: pd.Timestamp, end_dt: pd.Timestamp) -> pd.DataFrame:
+    mask = (df["Start_Date"] <= end_dt) & (df["End_Date"] >= start_dt)
+    out = df.loc[mask].copy()
+    if out.empty:
+        return out
+    out["Plot_Start"] = out["Start_Date"].where(out["Start_Date"] > start_dt, start_dt)
+    out["Plot_End"] = out["End_Date"].where(out["End_Date"] < end_dt, end_dt)
+    out["Selected_Window_Days"] = (out["Plot_End"] - out["Plot_Start"]).dt.days + 1
+    return out
 
-st.title("🛰️ NNJA / ERA5 / ERA-Interim daily DA timeline")
+st.title("🛰️ NNJA / ERA5 / ERA-Interim Data Assimilation Timeline")
 st.markdown(
-    "Pixel-derived NNJA and ERA observation timelines are compared on a **365-day no-leap daily grid**. "
-    "NNJA keeps its original extracted endpoints through **2025-12-31**. ERA bars that reached the final extracted ERA time boundary are extended to **2025-12-31** under the carry-forward assumption."
+    "This dashboard uses the validated 365-day, no-leap daily inventory derived from the pixel-extracted NNJA and ERA observation figures. "
+    "NNJA uses the original pixel-derived bars. ERA5 right-edge bars are extended only after platform/status validation. "
+    "ERA-Interim is clipped to **1979-01 through 2019-09**."
 )
-try:
-    data_path, data_kind, data_mtime = locate_data_file()
-    df = load_data(data_path, data_kind, data_mtime)
-except FileNotFoundError as exc:
-    st.error(str(exc)); st.stop()
+
+if not DATA_CSV.exists():
+    st.error(f"Cannot find inventory CSV: {DATA_CSV}")
+    st.stop()
+
+df = load_data(str(DATA_CSV), DATA_CSV.stat().st_mtime)
+
+st.sidebar.header("Data filter")
+selected_option = st.sidebar.selectbox("Dataset / overlap option", DATA_OPTIONS, index=3)
+exact_only = st.sidebar.checkbox(
+    "Exact category only for overlap options",
+    value=False,
+    help="Off: ERA5, NNJA also includes ERA5, ERA-Interim, NNJA. On: show only rows whose Exact_Category exactly matches the selected overlap label.",
+)
+sections = sorted(df["Section"].dropna().unique().tolist())
+selected_sections = st.sidebar.multiselect("Sections", sections, default=sections)
 
 st.sidebar.header("Temporal filter")
-min_date = df["Start_Date"].min().to_pydatetime()
-max_date = datetime(2025, 12, 31)
-selected_start, selected_end = st.sidebar.slider("Observation period", min_value=min_date, max_value=max_date, value=(min_date, max_date), format="YYYY-MM-DD")
-
-st.sidebar.header("Data option")
-st.sidebar.caption("Selected options are unioned and then de-duplicated; every exact interval is plotted once.")
-selected_options = st.sidebar.multiselect("Choose data sources / overlaps", DATA_OPTIONS, default=["ERA5", "ERA-Interim", "NNJA"])
-if not selected_options:
-    st.warning("Please select at least one data option."); st.stop()
-
-st.sidebar.header("Subset filters")
-sections = sorted(df["Section"].dropna().unique())
-selected_sections = st.sidebar.multiselect("Section", sections, default=sections)
-sensors = sorted(df["Sensor"].dropna().unique())
-selected_sensors = st.sidebar.multiselect("Sensor", sensors, default=sensors)
-show_extension = st.sidebar.checkbox("Include ERA extension-assumption intervals", value=True)
-search_text = st.sidebar.text_input("Search item", value="", placeholder="e.g., AMSUA, METOP-B, NOAA 15")
-
-mask = (df["Start_Date"] <= selected_end) & (df["End_Date"] >= selected_start)
-mask &= df["Section"].isin(selected_sections) & df["Sensor"].isin(selected_sensors)
-mask &= reduce(or_, [option_to_mask(df, opt) for opt in selected_options])
-if not show_extension:
-    mask &= ~df["Beyond_ERA_Source_Edge"]
-if search_text.strip():
-    q = search_text.strip().casefold()
-    text_mask = pd.Series(False, index=df.index)
-    for col in ["Sensor_Sat", "Sensor", "Satellite", "Match_Key", "NNJA_Source_Labels", "ERA_Source_Labels"]:
-        text_mask |= df[col].fillna("").astype(str).str.casefold().str.contains(q, regex=False)
-    mask &= text_mask
-
-fdf = df[mask].copy()
-if fdf.empty:
-    st.warning("No observation intervals are available for the selected options and date window."); st.stop()
-
-fdf["Plot_Start"] = fdf["Start_Date"].clip(lower=selected_start)
-fdf["Plot_End_Inclusive"] = fdf["End_Date"].clip(upper=selected_end)
-fdf["Plot_End"] = fdf["Plot_End_Inclusive"] + pd.Timedelta(days=1)
-fdf["Selected_Duration_Days"] = (fdf["Plot_End_Inclusive"] - fdf["Plot_Start"]).dt.days + 1
-fdf = fdf[fdf["Selected_Duration_Days"] > 0].copy()
-fdf = fdf.drop_duplicates(subset=[c for c in ["Match_Key", "Plot_Start", "Plot_End_Inclusive", "Exact_Category", "NNJA_Segment_IDs", "ERA5_Segment_IDs", "ERA_Interim_Segment_IDs"] if c in fdf.columns])
-
-k1, k2, k3, k4, k5 = st.columns(5)
-k1.metric("Visible intervals", f"{len(fdf):,}")
-k2.metric("Unique items", f"{fdf['Match_Key'].nunique():,}")
-k3.metric("Selected item-days", f"{int(fdf['Selected_Duration_Days'].sum()):,}")
-k4.metric("All-three item-days", f"{int(fdf.loc[fdf['Exact_Category'].eq('(ERA5, ERA-Interim, NNJA)'), 'Selected_Duration_Days'].sum()):,}")
-k5.metric("only-NNJA item-days", f"{int(fdf.loc[fdf['Exact_Category'].eq('only NNJA'), 'Selected_Duration_Days'].sum()):,}")
-
-with st.expander("Category day counts in selected interval", expanded=False):
-    counts = fdf.groupby("Exact_Category", dropna=False)["Selected_Duration_Days"].sum().reindex([c for c in EXACT_CATEGORY_ORDER if c in set(fdf["Exact_Category"])]).dropna().rename("item_days").reset_index()
-    st.dataframe(counts, use_container_width=True, hide_index=True)
-
-plot_df = fdf.sort_values(["Section", "Sensor", "Satellite", "Plot_Start", "Exact_Category"])
-y_order = list(dict.fromkeys(plot_df["Sensor_Sat"].tolist()))
-fig = px.timeline(
-    plot_df, x_start="Plot_Start", x_end="Plot_End", y="Sensor_Sat", color="Exact_Category",
-    color_discrete_map=CATEGORY_COLOR_MAP,
-    category_orders={"Sensor_Sat": y_order, "Exact_Category": EXACT_CATEGORY_ORDER},
-    hover_data={"Section": True, "Sensor": True, "Satellite": True, "Start_Day_Label": True, "End_Day_Label": True, "Selected_Duration_Days": True, "Selection_Flags": True, "NNJA_Codes": True, "ERA5_Codes": True, "ERA_Interim_Codes": True, "ERA_Visible_Colors": True, "Beyond_ERA_Source_Edge": True, "Plot_Start": False, "Plot_End": False},
+min_date = date(1978, 1, 1)
+max_date = date(2025, 12, 31)
+start_date, end_date = st.sidebar.slider(
+    "Observation period",
+    min_value=min_date,
+    max_value=max_date,
+    value=(date(2019, 1, 1), date(2025, 12, 31)),
+    format="YYYY-MM-DD",
 )
-fig.update_yaxes(autorange="reversed")
-fig.update_layout(height=min(2200, max(560, 24 * len(y_order) + 180)), xaxis_title="Daily timeline, 365-day no-leap calendar", yaxis_title="Normalized sensor / satellite item", legend_title="Exact non-overlapping category", font=dict(size=12), margin=dict(l=10, r=10, t=40, b=20))
-st.plotly_chart(fig, use_container_width=True)
+start_ts = pd.Timestamp(start_date)
+end_ts = pd.Timestamp(end_date)
 
-st.subheader("Overlap summary")
-summary_df = (fdf.groupby(["Sensor_Sat", "Sensor", "Satellite", "Section", "Exact_Category"], dropna=False)
-    .agg(selected_days=("Selected_Duration_Days", "sum"), first_visible_day=("Plot_Start", "min"), last_visible_day=("Plot_End_Inclusive", "max"), nnja_codes=("NNJA_Codes", lambda x: "; ".join(sorted(set(v for v in x if isinstance(v, str) and v)))), era5_codes=("ERA5_Codes", lambda x: "; ".join(sorted(set(v for v in x if isinstance(v, str) and v)))), erainterim_codes=("ERA_Interim_Codes", lambda x: "; ".join(sorted(set(v for v in x if isinstance(v, str) and v))))).reset_index().sort_values(["selected_days", "Sensor_Sat"], ascending=[False, True]))
-st.dataframe(summary_df, use_container_width=True, hide_index=True)
+st.sidebar.header("Display")
+show_replacements = st.sidebar.checkbox("Include derived replacement satellites", value=True)
+show_validation_cols = st.sidebar.checkbox("Show validation columns in table", value=True)
+height_per_row = st.sidebar.slider("Timeline row height", 12, 32, 18)
+max_chart_height = st.sidebar.slider("Maximum chart height", 500, 2200, 1400, step=100)
 
-st.subheader("Detailed interval inventory")
-show_cols = [c for c in ["Comparison_Segment_ID", "Sensor_Sat", "Sensor", "Satellite", "Section", "Start_Date", "End_Date", "Start_Day_Label", "End_Day_Label", "Selected_Duration_Days", "Exact_Category", "Selection_Flags", "NNJA_Active", "ERA5_Active", "ERA_Interim_Active", "Beyond_ERA_Source_Edge", "NNJA_Codes", "ERA5_Codes", "ERA_Interim_Codes", "NNJA_Source_Labels", "ERA_Source_Labels"] if c in fdf.columns]
-st.dataframe(fdf[show_cols].sort_values(["Sensor_Sat", "Start_Date", "Exact_Category"]), use_container_width=True, hide_index=True)
-st.download_button("Download filtered intervals as CSV", data=fdf[show_cols].to_csv(index=False).encode("utf-8"), file_name="nnja_era5_erainterim_filtered_intervals.csv", mime="text/csv")
-st.caption(f"Data file: {Path(data_path).name}")
+filtered = df.loc[option_mask(df, selected_option, exact_only)].copy()
+if selected_sections:
+    filtered = filtered[filtered["Section"].isin(selected_sections)]
+if not show_replacements and "Derived_Replacement_Satellite" in filtered.columns:
+    filtered = filtered[~filtered["Derived_Replacement_Satellite"]]
+filtered = clip_to_window(filtered, start_ts, end_ts)
+
+st.subheader("Selection summary")
+c1, c2, c3, c4, c5 = st.columns(5)
+c1.metric("Visible intervals", f"{len(filtered):,}")
+c2.metric("Unique items", f"{filtered['Match_Key'].nunique() if not filtered.empty else 0:,}")
+c3.metric("Selected item-days", f"{int(filtered['Selected_Window_Days'].sum()) if not filtered.empty else 0:,}")
+c4.metric("Post-2019 extension intervals", f"{int(filtered['Beyond_ERA_Source_Edge'].sum()) if 'Beyond_ERA_Source_Edge' in filtered else 0:,}")
+c5.metric("Derived replacement intervals", f"{int(filtered['Derived_Replacement_Satellite'].sum()) if 'Derived_Replacement_Satellite' in filtered else 0:,}")
+
+st.caption(
+    "Color legend: ERA5 / ERA-Interim categories use blue tones; NNJA overlap categories use green tones; only NNJA is orange. "
+    "Combination labels have no parentheses."
+)
+
+if filtered.empty:
+    st.warning("No intervals match the selected dataset option, sections, and time window.")
+else:
+    filtered = filtered.sort_values(["Section", "Sensor", "Satellite", "Plot_Start", "Exact_Category"])
+    chart_df = filtered.copy()
+    chart_df["Timeline_Item"] = chart_df["Section"] + " | " + chart_df["Sensor_Sat"]
+    fig = px.timeline(
+        chart_df,
+        x_start="Plot_Start",
+        x_end="Plot_End",
+        y="Timeline_Item",
+        color="Exact_Category",
+        color_discrete_map=COLOR_MAP,
+        hover_data={
+            "Sensor_Sat": True,
+            "Start_Date": "|%Y-%m-%d",
+            "End_Date": "|%Y-%m-%d",
+            "Exact_Category": True,
+            "Selection_Flags": True,
+            "Extension_Action": True,
+            "Replacement_From": True,
+            "Timeline_Item": False,
+        },
+    )
+    fig.update_yaxes(autorange="reversed")
+    fig.update_layout(
+        height=min(max_chart_height, max(500, chart_df["Timeline_Item"].nunique() * height_per_row + 160)),
+        xaxis_title="Date on 365-day no-leap calendar",
+        yaxis_title="Section | Sensor platform",
+        legend_title="Exact category",
+        margin=dict(l=10, r=10, t=30, b=10),
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    st.subheader("Detailed interval inventory")
+    table_cols = [c for c in DISPLAY_COLS if c in filtered.columns]
+    if not show_validation_cols:
+        table_cols = [c for c in table_cols if c not in {"Validation_Basis", "Validation_Source_URLs"}]
+    display_df = filtered[table_cols].copy()
+    st.dataframe(display_df, use_container_width=True, hide_index=True)
+
+    csv_bytes = filtered.drop(columns=[c for c in ["Plot_Start", "Plot_End"] if c in filtered.columns]).to_csv(index=False).encode("utf-8")
+    st.download_button(
+        "Download filtered intervals as CSV",
+        data=csv_bytes,
+        file_name="filtered_nnja_era5_erainterim_validated_intervals.csv",
+        mime="text/csv",
+    )
+
+if DATA_XLSX.exists():
+    with open(DATA_XLSX, "rb") as f:
+        st.download_button(
+            "Download full validated Excel workbook",
+            data=f.read(),
+            file_name=DATA_XLSX.name,
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        )
+
+with st.expander("Dataset notes"):
+    st.markdown(
+        """
+- Calendar: fixed 365-day years, D001-D365, no leap day.
+- ERA-Interim active period: 1979-01-01 through 2019-09-30.
+- ERA source grey / blue bars mean ERA5 and ERA-Interim before the ERA-Interim cap; green means ERA5 only; red means ERA-Interim only.
+- Post-2019 ERA5 right-edge extensions are capped at satellite retirement, data-service stop, or primary-satellite replacement dates.
+- Derived replacement satellites such as GOES 19, Himawari 9, Meteosat 10/12 are marked with `Derived_Replacement_Satellite = True`.
+"""
+    )
