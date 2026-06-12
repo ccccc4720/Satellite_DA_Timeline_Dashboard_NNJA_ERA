@@ -1,0 +1,7 @@
+Code_or_Color,ERA5_Active,ERA_Interim_Active,Meaning
+grey,True,True,used in both ERA5 and ERA-Interim
+blue,True,True,ERA5 used reprocessed observations relative to ERA-Interim assimilated observations
+green,True,False,used in ERA5 but not ERA-Interim
+red,False,True,assimilated in ERA-Interim but not ERA5
+blue_thick / blue_thin,,,NNJA visible blue bar
+black_thick / black_marker,,,NNJA visible black bar or one-day marker
